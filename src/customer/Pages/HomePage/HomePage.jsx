@@ -9,7 +9,14 @@ const HomePage = () => {
     <div>
         <MainCarousel/>
 
-        <div>
+        <div className="space-y-5 py-10" style={{ backgroundColor: '#f0f0f0', border: '1px solid #ccc' }}>
+
+
+
+            <HomeSectionCarousel/>
+            <HomeSectionCarousel/>
+            <HomeSectionCarousel/>
+            <HomeSectionCarousel/>
             <HomeSectionCarousel/>
         </div>
     </div>
