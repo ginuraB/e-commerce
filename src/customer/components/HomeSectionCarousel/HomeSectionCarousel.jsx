@@ -4,7 +4,7 @@ import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({data,sectionName}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false); // State to control the visibility of the left arrow
 
@@ -32,12 +32,13 @@ const HomeSectionCarousel = () => {
 
   const syncactiveIndex = ({ item }) => setActiveIndex(item);
 
-  const items = Array(8).fill(<HomeSectionCard />);
+  //const items = Array(8).fill(<HomeSectionCard />);
+  const items=data.slice(0,10).map((item)=><HomeSectionCard  product={item}/>) 
 
   return (
     <div className="px-6 lg:px-10 py-10 bg-gray-50">
-      <h2 className="text-xl lg:text-2xl font-semibold mb-5 text-center text-gray-800">
-        Featured Products
+      <h2 className="text-xl lg:text-2xl font-extrabold mb-5 text-center text-gray-800">
+        {sectionName}
       </h2>
       <div className="relative">
         <AliceCarousel
