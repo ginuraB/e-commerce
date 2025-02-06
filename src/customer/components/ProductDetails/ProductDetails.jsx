@@ -150,7 +150,10 @@ export default function ProductDetails() {
                             {/* Reviews */}
                             <div className="mt-6">
                                 <div><Rating name='read-only value={3.5} readOnly' />
-                                    <p>645 Ratings</p></div>
+                                    <p className='opacity-50 text-sm'>645 Ratings</p>
+                                    <p className='ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500'>87 Reviews</p>
+
+                                </div>
                             </div>
 
                             <form className="mt-10">
