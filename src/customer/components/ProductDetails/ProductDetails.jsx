@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
+import { Rating } from '@mui/material'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -138,29 +139,18 @@ export default function ProductDetails() {
                         {/* Options */}
                         <div className="mt-4 lg:row-span-3 lg:mt-0">
                             <h2 className="sr-only">Product information</h2>
-                            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+                            <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6'>
+                                {/* <p className="text-3xl tracking-tight text-gray-900">{product.price}</p> */}
+                                <p className='font-semibold'>LKR1750</p>
+                                <p className='opacity line-through'>LKR2150</p>
+                                <p className='text-orange-500 font-semibold'>12.5% off</p>
+                            </div>
+
 
                             {/* Reviews */}
                             <div className="mt-6">
-                                <h3 className="sr-only">Reviews</h3>
-                                <div className="flex items-center">
-                                    <div className="flex items-center">
-                                        {[0, 1, 2, 3, 4].map((rating) => (
-                                            <StarIcon
-                                                key={rating}
-                                                aria-hidden="true"
-                                                className={classNames(
-                                                    reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                                                    'size-5 shrink-0',
-                                                )}
-                                            />
-                                        ))}
-                                    </div>
-                                    <p className="sr-only">{reviews.average} out of 5 stars</p>
-                                    <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                                        {reviews.totalCount} reviews
-                                    </a>
-                                </div>
+                                <div><Rating name='read-only value={3.5} readOnly' />
+                                    <p>645 Ratings</p></div>
                             </div>
 
                             <form className="mt-10">
