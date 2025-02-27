@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
 import { Rating } from '@mui/material'
+import Button from '@mui/material/Button';
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -15,7 +16,7 @@ const product = {
     ],
     images: [
         {
-            src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+            src: '../assets/images/tshirt-design-fashion-concept-blank-600nw-1717323928.webp',
             alt: 'Two each of gray, white, and black shirts laying flat.',
         },
         {
@@ -37,14 +38,13 @@ const product = {
         { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
     ],
     sizes: [
-        { name: 'XXS', inStock: false },
-        { name: 'XS', inStock: true },
+
+
         { name: 'S', inStock: true },
         { name: 'M', inStock: true },
         { name: 'L', inStock: true },
         { name: 'XL', inStock: true },
-        { name: '2XL', inStock: true },
-        { name: '3XL', inStock: true },
+
     ],
     description:
         'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -149,7 +149,7 @@ export default function ProductDetails() {
 
                             {/* Reviews */}
                             <div className="mt-6">
-                                <div><Rating name='read-only value={3.5} readOnly' />
+                                <div className='flex items-center space-x-3'><Rating name='read-only value={3.5} readOnly' />
                                     <p className='opacity-50 text-sm'>645 Ratings</p>
                                     <p className='ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500'>87 Reviews</p>
 
@@ -157,7 +157,7 @@ export default function ProductDetails() {
                             </div>
 
                             <form className="mt-10">
-                                {/* Colors */}
+
                                 <div>
                                     <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
@@ -237,12 +237,9 @@ export default function ProductDetails() {
                                     </fieldset>
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
-                                >
-                                    Add to bag
-                                </button>
+                                <Button variant="contained" sx={{ bgcolor: '#9155fd', px: "2rem", py: "0.5rem" }}>
+                                    Add to Cart
+                                </Button>
                             </form>
                         </div>
 
